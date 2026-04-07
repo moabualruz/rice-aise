@@ -1,0 +1,25 @@
+# Binary
+raise
+*.exe
+
+# Go
+*.test
+*.out
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Build
+/dist/
+
+# OMC state (session-specific)
+.omc/
+.omx/
+.codex
