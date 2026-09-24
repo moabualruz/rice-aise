@@ -104,7 +104,8 @@ func TestCredentialAndFilesystemHelpers(t *testing.T) {
 		assertMissing(t, link+".tmp")
 
 		resolved, err := resolveCopySource(link)
-		if err != nil || resolved != second {
+		wantResolved, _ := filepath.EvalSymlinks(second)
+		if err != nil || resolved != wantResolved {
 			t.Fatalf("resolveCopySource() = %q, %v", resolved, err)
 		}
 		if _, err := resolveCopySource(filepath.Join(root, "missing-link")); err == nil {
